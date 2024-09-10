@@ -27,13 +27,24 @@
                         </li>
                     </ul>
 
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LogIn">LogIn</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LogOut">LogOut</a>
-                        </li>
+                    <ul class="navbar-nav flex-grow-1" style="float:right !important;">
+                        @if (Context.Session.GetString("email") != null)
+                        {
+                            <li><p style="color:#000; margin-top:15px;">Hello @Context.Session.GetString("email")
+                                </p></li>
+                            <li class="nav-item">@Html.ActionLink("LogOut", "LogOut", "Home")</li>
+                        }
+                        else
+
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignUp">SignUp</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LogIn">LogIn</a>
+                            </li>
+                        }
+
                     </ul>
                 </div>
             </div>
