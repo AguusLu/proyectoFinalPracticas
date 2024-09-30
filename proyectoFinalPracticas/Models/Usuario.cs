@@ -24,4 +24,6 @@ public partial class Usuario
     [NotMapped]
     [Compare("Clave", ErrorMessage = "Las constraseñas no coinciden")]
     public string? ReClave { get; set; }
+
+    //comentario de Agus
 }
