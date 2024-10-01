@@ -26,4 +26,5 @@ public partial class Usuario
     public string? ReClave { get; set; }
 
     //comentario de Agus
+    //comentario agus dos
 }
